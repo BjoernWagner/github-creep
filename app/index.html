@@ -12,9 +12,14 @@
 <body ng-controller='userListCtrl'>
 
   <input ng-model='query'>
-
+  <button id='button'ng-click='searchUser()'>Search</button>
   <ul>
-    <li ng-repeat='user in users | filter:query'>{{user.name}}</li>
+    <li ng-repeat='user in users | filter:query'>
+
+      <span>{{user.login}}</span>
+      <img src={{user.avatar_url}}>
+
+    </li>
 
 
 
