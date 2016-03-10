@@ -23,7 +23,5 @@ describe('GithubCreep', function() {
 
   });
 
-
-
 });
 
