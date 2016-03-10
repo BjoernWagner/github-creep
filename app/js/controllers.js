@@ -4,7 +4,7 @@ githubCreep.controller('userListCtrl', ['$scope', '$http',
 
   function($scope, $http) {
 
-    $http.get('https://api.github.com/search/users?q=followers:%3E7500').success(function(data) {
+    $http.get('https://api.github.com/search/users?q=followers:%3E7000').success(function(data) {
       $scope.users = data.items.slice(0,20);
     });
 
