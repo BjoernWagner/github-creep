@@ -10,14 +10,15 @@
   <script src="js/controllers.js"></script>
 </head>
 <body ng-controller='userListCtrl'>
-
   <input ng-model='query'>
   <button id='button'ng-click='searchUser()'>Search</button>
-  <ul>
-    <li ng-repeat='user in users | filter:query'>
 
-      <span>{{user.login}}</span>
-      <img id='avatar' src={{user.avatar_url}}>
+  <ul>
+    <li ng-repeat='follower in followers | filter:query'>
+
+      <div id='name'>Name: {{follower.name}}</div>
+      <div id='followers'>Followers: {{follower.followers}}</div>
+      <img id='avatar' src={{follower.avatar_url}}>
 
     </li>
 
