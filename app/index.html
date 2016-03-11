@@ -4,21 +4,38 @@
 <head>
   <meta charset='utf-8'>
   <title>Github Creep</title>
-
+  <link href='https://fonts.googleapis.com/css?family=Rock+Salt|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="app.css" type="text/css" rel="stylesheet">
   <script src="bower_components/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
 </head>
 <body ng-controller='userListCtrl'>
-  <input ng-model='query'>
-  <button id='button'ng-click='searchUser()'>Search</button>
+  <header class="header">
+    <h1>Github Creep</h1>
+    <div class="search">
+      <input ng-model='query'>
+      <button id='button'ng-click='searchUser()'>Search</button>
+    </div>
+  </header>
+
 
   <ul>
-    <li ng-repeat='follower in followers | filter:query'>
-
-      <div id='name'>Name: {{follower.name}}</div>
-      <div id='followers'>Followers: {{follower.followers}}</div>
-      <img id='avatar' src={{follower.avatar_url}}>
+    <li ng-repeat='follower in followers | filter:query' ng-animate="'animate'">
+      <div class="avatar">
+        <img id='avatar' src={{follower.avatar_url}}>
+      </div>
+      <div class="information">
+        <p>
+          <span id='name'>{{follower.name}}</span></br>
+        </p>
+        <p>
+          <span id="username"><a href={{follower.html_url}}>{{follower.login}}</a></span></br>
+          <span id='repos'>Repositories: {{follower.public_repos}}</span></br>
+          <span id='followers'>Followers: {{follower.followers}}</span></br>
+          <span id='location'>Location: {{follower.location}}</span>
+        </p>
+      </div>
 
     </li>
 

@@ -21,9 +21,9 @@ describe('GithubCreep', function() {
         expect(userList.count()).toBe(1);
     });
 
-    it('should display top 20 github users by default', function() {
-        var defaultList = element.all(by.repeater('followers in follower'));
-        expect(defaultList.count()).toBe(20);
+    it('should display top 10 github users by default', function() {
+        var defaultList = element.all(by.repeater('follower in followers'));
+        expect(defaultList.count()).toBe(10);
     });
 
     it('should display user avatar', function() {
@@ -33,13 +33,13 @@ describe('GithubCreep', function() {
 
     it('should display user followers', function(){
         var defaultList = element(by.id('followers'));
-        expect(defaultList.getText()).toMatch("Followers: 7000")
+        expect(defaultList.getText()).toMatch(/Followers: \d+/)
     });
 
     it('should display user repos', function(){
         var defaultList = element(by.id('repos'));
-        expect(defaultList.getText()).toMatch("Repos: 5")
-    };)
+        expect(defaultList.getText()).toMatch(/Repositories: \d+/)
+    });
 
 
 

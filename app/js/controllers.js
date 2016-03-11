@@ -6,7 +6,7 @@ githubCreep.controller('userListCtrl', ['$scope', '$http', function($scope, $htt
 
 
     $http.get('https://api.github.com/orgs/makersacademy/members').success(function(data) {
-      $scope.users = data.slice(0,20);
+      $scope.users = data.slice(0,10);
 
       var arrlength = $scope.users.length;
       $scope.followers = [];
