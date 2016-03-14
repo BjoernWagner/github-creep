@@ -11,18 +11,25 @@
 ##Description
 A dynamic Github user look-up tool, offering the ability to search for users by name or username. Profiles are searched using Github's API and return users' number of followers, number of repositories and location.
 
-##Instructions
-* Create a local version of the project by entering `git clone https://github.com/BjoernWagner/github-creep` in a shell application (e.g., Terminal).
-* Access the development environment by starting a local server session (`npm start`) and directing your browser to `http://localhost:8000/app/index.html`.
-* Run feature tests via the `npm start protractor` script.
-* Run unit tests via the `npm test` script.
-
 ##Technologies
 * AngularJS
 * HTML & CSS
 * Node
 * Protractor
 * JSON
+
+##Screenshots
+A list of Github-members from MakersAcademy 
+* ![alt tag](http://i.imgur.com/s9iCSyL.jpg)
+
+##Search for Github-members
+* ![alt tag](http://i.imgur.com/6hZhycs.jpg)
+
+##Instructions
+* Create a local version of the project by entering `git clone https://github.com/BjoernWagner/github-creep` in a shell application (e.g., Terminal).
+* Access the development environment by starting a local server session (`npm start`) and directing your browser to `http://localhost:8000/app/index.html`.
+* Run feature tests via the `npm start protractor` script.
+* Run unit tests via the `npm test` script.
 
 ##Known Issues
 * Excessive controller logic for building user lists needs to be refactored into a separate factory (included, but disabled [not working]).
