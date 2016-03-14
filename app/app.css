@@ -118,17 +118,32 @@ p, span, a, img {
   background-color: #FAFBFB
 }
 
+footer p {
+  margin: 6% 0 3% 0;
+  background-color: #F3F7F8;
+  color: #989898;
+  font-size: 0.85em; 
+  text-align: center;
+}
+
+footer a {
+  background-color: #F3F7F8;
+  color: #5D69B2;
+  font-weight: normal;
+  text-decoration: none;
+}
+
 #name {
   font-weight: bold;
   font-size: 1.2em;
 }
 
 .animate-enter {
-    -webkit-transition: 1s linear all; /* Chrome */
-    transition: 1s linear all;
-    opacity: 0;
+  -webkit-transition: 1s linear all; /* Chrome */
+  transition: 1s linear all;
+  opacity: 0;
 }
 
 .animate-enter.animate-enter-active {
-    opacity: 1;
+  opacity: 1;
 }

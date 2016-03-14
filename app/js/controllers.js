@@ -1,41 +1,33 @@
+'use strict';
 
+githubCreep.controller('UserListCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
+  const USER_DISPLAY_COUNT = 10;
 
+  var self = this;
 
-
-githubCreep.controller('userListCtrl', ['$scope', '$http', function($scope, $http) {
-
-
-    $http.get('https://api.github.com/orgs/makersacademy/members').success(function(data) {
-      $scope.users = data.slice(0,10);
-
-      var arrlength = $scope.users.length;
-      $scope.followers = [];
-      for (var i = 0; i < arrlength; i++) {
-        $http.get('https://api.github.com/users/'+$scope.users[i].login).success(function(data){
-          $scope.followers.push(data);
-        });
-      };
-
+  self.displayDefault = function() {
+    //$window.location.reload();
+    $http.get('https://api.github.com/orgs/makersacademy/members').then(function(response) {
+      let results = response.data.slice(0, USER_DISPLAY_COUNT);
+      self._buildUserList(results);
     });
-
-
-    $scope.searchUser=function(){
-      $http.get('https://api.github.com/search/users?q='+$scope.query).success(function(data) {
-        $scope.users = data.items.slice(0,5);
-        var arrlength = $scope.users.length;
-        $scope.followers = [];
-        for (var i = 0; i < arrlength; i++) {
-        $http.get('https://api.github.com/users/'+$scope.users[i].login).success(function(data){
-          $scope.followers.push(data);
-        });
-      };
-
-
-
-    });
-
   };
 
+  self.searchUser = function() {
+    $http.get('https://api.github.com/search/users?q=' + $scope.query).then(function(response) {
+      let results = response.data.items.slice(0, USER_DISPLAY_COUNT);
+      self._buildUserList(results);
+    });
+  };
 
+  self._buildUserList = function(results) {
+    self.users = [];
+      
+    for (let result of results) {
+      $http.get('https://api.github.com/users/' + result.login).then(function(response) {
+        self.users.push(response.data);
+        //self.users.push(new UserFactory());
+      });
+    };
+  };
 }]);
-
