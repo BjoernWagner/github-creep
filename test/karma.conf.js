@@ -8,6 +8,7 @@ module.exports = function(config){
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'app/components/**/*.js',
+      'app/**/*.js',
       'app/js/app.js',
       'app/js/controllers.js',
       'test/unit/controllersSpec.js'
@@ -15,7 +16,10 @@ module.exports = function(config){
 
     autoWatch : true,
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'browserify'],
+    preprocessors: {
+    'app/tests/*.js': [ 'browserify' ]
+    },
 
     browsers : ['Chrome'],
 

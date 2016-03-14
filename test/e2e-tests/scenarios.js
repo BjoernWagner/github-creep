@@ -11,7 +11,7 @@ describe('GithubCreep', function() {
     });
 
     it('should search by username', function() {
-        var userList = element.all(by.repeater('user in users'));
+        var userList = element.all(by.repeater('follower in followers'));
         var query = element(by.model('query'));
         var button = element(by.id('button'));
 
@@ -21,15 +21,27 @@ describe('GithubCreep', function() {
         expect(userList.count()).toBe(1);
     });
 
-    it('should display top 20 github users by default', function() {
-        var defaultList = element.all(by.repeater('user in users'));
-        expect(defaultList.count()).toBe(20);
+    it('should display top 10 github users by default', function() {
+        var defaultList = element.all(by.repeater('follower in followers'));
+        expect(defaultList.count()).toBe(10);
     });
 
     it('should display user avatar', function() {
         var defaultList = element(by.id('avatar'));
         expect(defaultList.getAttribute('src')).toMatch("https://avatars.githubusercontent.com/");
     });
+
+    it('should display user followers', function(){
+        var defaultList = element(by.id('followers'));
+        expect(defaultList.getText()).toMatch(/Followers: \d+/)
+    });
+
+    it('should display user repos', function(){
+        var defaultList = element(by.id('repos'));
+        expect(defaultList.getText()).toMatch(/Repositories: \d+/)
+    });
+
+
 
   });
 
