@@ -21,7 +21,7 @@
         </div>
     </header>
     <ul>
-        <li ng-repeat="user in list.users" ng-animate="'animate'">
+        <li ng-repeat="user in list.users | filter: query" ng-animate="'animate'">
             <div class="avatar">
                 <img id="avatar" ng-src={{user.avatar_url}}>
             </div>
