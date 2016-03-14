@@ -1,42 +1,34 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-describe('my app', function() {
+describe('GithubCreep', function() {
 
+  describe('github users list view', function() {
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+    beforeEach(function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
-  });
 
-
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view1');
     });
 
+    it('should search by username', function() {
+        var userList = element.all(by.repeater('user in users'));
+        var query = element(by.model('query'));
+        var button = element(by.id('button'));
 
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+        query.sendKeys('drjparry');
+        button.click();
+
+        expect(userList.count()).toBe(1);
     });
 
-  });
-
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+    it('should display top 20 github users by default', function(){
+        var defaultList = element.all(by.repeater('user in users'));
+        expect(defaultList.count()).toBe(20);
     });
 
   });
+
+
+
 });
+
