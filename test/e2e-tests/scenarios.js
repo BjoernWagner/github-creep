@@ -40,10 +40,6 @@ describe('GithubCreep', function() {
         var defaultList = element(by.id('repos'));
         expect(defaultList.getText()).toMatch(/Repositories: \d+/)
     });
-
-
-
   });
-
 });
 
