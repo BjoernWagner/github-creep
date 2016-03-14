@@ -11,7 +11,7 @@ describe('GithubCreep', function() {
     });
 
     it('should search by username', function() {
-        var userList = element.all(by.repeater('follower in followers'));
+        var userList = element.all(by.repeater('user in list.users'));
         var query = element(by.model('query'));
         var button = element(by.id('button'));
 
@@ -22,7 +22,7 @@ describe('GithubCreep', function() {
     });
 
     it('should display top 10 github users by default', function() {
-        var defaultList = element.all(by.repeater('follower in followers'));
+        var defaultList = element.all(by.repeater('user in list.users'));
         expect(defaultList.count()).toBe(10);
     });
 

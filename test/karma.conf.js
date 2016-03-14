@@ -16,10 +16,8 @@ module.exports = function(config){
 
     autoWatch : true,
 
-    frameworks: ['jasmine', 'browserify'],
-    preprocessors: {
-    'app/tests/*.js': [ 'browserify' ]
-    },
+    frameworks: ['jasmine'],
+
 
     browsers : ['Chrome'],
 
