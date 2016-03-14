@@ -9,7 +9,7 @@
 * Bjoern Wagner
 
 ##Description
-A dynamic Github user look-up tool, offering the ability to search for users by name or username.
+A dynamic Github user look-up tool, offering the ability to search for users by name or username. Profiles are searched using Github's API and return users' number of followers, number of repositories and location.
 
 ##Instructions
 * Create a local version of the project by entering `git clone https://github.com/BjoernWagner/github-creep` in a shell application (e.g., Terminal).
@@ -20,6 +20,9 @@ A dynamic Github user look-up tool, offering the ability to search for users by 
 ##Technologies
 * AngularJS
 * HTML & CSS
+* Node
+* Protractor
+* JSON
 
 ##Known Issues
 * Excessive controller logic for building user lists needs to be refactored into a separate factory (included, but disabled [not working]).
