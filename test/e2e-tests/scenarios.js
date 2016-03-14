@@ -21,9 +21,14 @@ describe('GithubCreep', function() {
         expect(userList.count()).toBe(1);
     });
 
-    it('should display top 20 github users by default', function(){
+    it('should display top 20 github users by default', function() {
         var defaultList = element.all(by.repeater('user in users'));
         expect(defaultList.count()).toBe(20);
+    });
+
+    it('should display user avatar', function() {
+        var defaultList = element(by.id('avatar'));
+        expect(defaultList.getAttribute('src')).toMatch("https://avatars.githubusercontent.com/");
     });
 
   });
