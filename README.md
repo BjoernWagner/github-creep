@@ -2,7 +2,7 @@
 
 ######A Makers Academy Project (Week 8: AngularJS)
 
-####Authors
+##Authors
 * Rebecca Piper
 * Alain Lemaire
 * David Parry
@@ -19,11 +19,11 @@ A dynamic Github user look-up tool, offering the ability to search for users by 
 * JSON
 
 ##Screenshots
-A list of Github-members from MakersAcademy 
-* ![alt tag](http://i.imgur.com/s9iCSyL.jpg)
+* A list of Github-members from MakersAcademy 
+![alt tag](http://i.imgur.com/s9iCSyL.jpg)
 
-##Search for Github-members
-* ![alt tag](http://i.imgur.com/6hZhycs.jpg)
+* Search for Github-members
+![alt tag](http://i.imgur.com/6hZhycs.jpg)
 
 ##Instructions
 * Create a local version of the project by entering `git clone https://github.com/BjoernWagner/github-creep` in a shell application (e.g., Terminal).
